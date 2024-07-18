@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Mulier Lepidus</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Mulier Lepidus</h1>
+    <h2>Para mulheres encantadoras</h2>
+    <nav>
+        <ul>
+            {% for cabecalho in cabecalhos %}
+            <li>
+                <a class='' href={{cabecalho.link}}>{{cabecalho.name}}</a>
+            </li>
+            {% endfor %} 
+        </ul>
+    </nav>
+    <div class="conteudo">
+        <p>
+            {{olas}}
+        </p>
+        {% for ola in olas %}
+        <p>
+        {{ola}}
+        </p>
+        {%endfor%}
+        <p>
+            {{olas.0}}
+        </p>
+        <p>
+            {{olas.1}}
+        </p>
+        <p>
+            {{olas.2}}
+        </p>
+        <button onclick="f_teste()"> Função JS </button>
+        <img src="{% static 'img/pijama_fem_adult_urso-poh_1.png' %}" alt="pijama">
+    </div>
+</body>
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+</html>

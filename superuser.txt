@@ -1,0 +1,5 @@
+Usuário (leave blank to use 'joaquim.pnmjesus'): Moreira.J.Jkim
+Endereço de email: jkimdejesus@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
