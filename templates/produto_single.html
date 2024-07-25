@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulier Lepidus</title>
+    <link rel="stylesheet" href="{% static 'bootstrap5/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="cabecalho">
+        <h1>Mulier Lepidus</h1>
+        <h2>Para mulheres encantadoras</h2>
+    </div>
+    {% include '_header.html' %}
+    <div class="conteudo">
+        <h3>
+            {{ product.name }}
+        </h3>
+        <p>
+            <div class="imagecenter">
+                <img src="{{product.photo.url}}" alt="{{product.photo}}">
+            </div>
+        </p>
+        <p>
+            R$ {{ product.price|floatformat:2 }} | Estoque: {{ product.stock }} | Categoria: {{ product.pro_category}}
+        </p>
+        <p>
+            Descrição: {{ product.descript }}
+        </p>
+    </div>
+    {% include '_footer.html' %}
+</body>
+<script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap5/js/bootstrap.min.js' %}"></script>
+</html>

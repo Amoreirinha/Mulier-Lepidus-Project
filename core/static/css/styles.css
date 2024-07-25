@@ -1,6 +1,12 @@
 body{
-    background-color: #eb9090;
+    width: 100%;
+    height: 100vh; /* Ajuste conforme necessário */
+    background-image: url('20240711_212307_0000.png');
+    background-size: cover; /* Cobrir o contêiner */
+    background-position: center; /* Centralizar a imagem */
+    background-repeat: repeat; /* repetir a imagem */
     margin: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 h1{
     color: #F6E6CF;
@@ -17,37 +23,103 @@ h2{
     margin: 0% 2% 2% 2%;
 }
 h3{
-    padding: 5%;
+    padding: 5% 5% 0 5%;
     font-size: 200%;
     color:#171003;
     text-align: center;
+    margin: 0 0 2% 0;
 }
-nav{
+/* nav{
     background-color: #E7B1AA;
 }
 nav ul{
     display: flex;
     justify-content: center;
-    margin: 0;
-    padding: 0.5%;
-}
+    margin: 0% !important;
+    padding: 0.5% !important;
+    align-items: center;
+} */
 nav ul li{
     display: flex;
-    margin: 0% 2% 0 2%;
+    margin: 0% 5%;
+    padding: 2%;
     text-decoration: none;
 }
 .conteudo{
     background-color: #F6F4EE;
     margin: 0 3% 0 3%;
     justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 p{
     font-size: 150%;
-    color:#171003;
+    color:#171003 !important;
     padding: 2%;
     text-align: justify;
+    margin: 0;
 }
 img{
-    padding: 0 20% 0 20%;
+    width: auto !important;
+    object-fit: cover;
+    max-height: 600px !important;
+}
+a{
+    font-size: 150% !important;
+    color:#F6F4EE !important;
+    text-decoration: none !important;
+    padding: 1% !important;
+}
+.imagecenter{
+    display: inline-block !important;
+    margin: 2% !important;
+    padding: 0 10% 0 10% !important;
+}
+.cabecalho{
+    background-color: #eb9090 !important;
+    margin: 0 !important;
+    padding: 0.5% !important;
+    justify-content: center !important;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
     justify-content: center;
+    align-items: center;
+    padding: 3%;
+}
+.card-text{
+    text-align: center;
+}
+.btn-primary{
+    padding: 0 0.5% ;
+    --bs-btn-bg: #eb9090;
+    --bs-btn-border-color: #eb9090;
+    --bs-btn-hover-bg: #eb9090;
+    --bs-btn-hover-border-color: #eb9090;
+    --bs-btn-active-bg: #eb9090;
+    --bs-btn-active-border-color: #eb9090;
+    --bs-btn-disabled-bg: #eb9090;
+    --bs-btn-disabled-border-color: #eb9090;
+}
+.bg-body-tertiary{
+    background-color:  #E7B1AA !important;
+}
+.navbar-brand{
+    margin: 0;
+}
+.mx-auto {
+    justify-content: center;
+}
+.footer{
+    background-color: #eb9090;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.no-copy{
+    color:#F6F4EE;
+    font-size: 150%;
+    padding: 2%;
 }

@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-g10sco)1(=o1nbexgxnun4)hs6i6pew=8obzam34df#%rn2s28
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # DEBUG = False
 # ALLOWED_HOSTS = ['*']
@@ -158,4 +158,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configurar as configurações do Django: No seu arquivo de configurações (settings.py), adicione configurações para o armazenamento de mídia.
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'core/static')
