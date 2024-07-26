@@ -1,19 +1,6 @@
+{% extends '_main.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mulier Lepidus</title>
-    <link rel="stylesheet" href="{% static 'bootstrap5/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <div class="cabecalho">
-        <h1>Mulier Lepidus</h1>
-        <h2>Para mulheres encantadoras</h2>
-    </div>
-        {% include '_header.html' %}
+{% block content %}
     <div class="conteudo">
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -59,8 +46,4 @@
             {% endfor %}
         </div>
     </div>
-{% include '_footer.html' %}
-</body>
-<script type="text/javascript" src="{% static 'bootstrap5/js/bootstrap.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
-</html>
+{% endblock %}

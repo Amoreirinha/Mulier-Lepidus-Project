@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from core.models import Products
+from core.models import Products, Blog
 
 def get_common_context():
     return {
@@ -17,36 +17,43 @@ def get_common_context():
 
 def index(request):
     context = get_common_context()
+    context['title'] = 'Mulier Lepidus'
     return render(request, 'index.html', context)
 
 def contato(request):
     context = get_common_context()
+    context['title'] = 'Contato Mulier Lepidus'
     return render(request, 'contato.html', context)
 
 def sobre(request):
     context = get_common_context()
+    context['title'] = 'Sobre Nós'
     return render(request, 'sobre.html', context)
 
 def lojinha(request):
     products = Products.objects.all()
     context = get_common_context()
     context['products'] = products
+    context['title'] = 'Lojinha'
     return render(request, 'lojinha.html', context)
 
 def produto_single(request, id):
     product = get_object_or_404(Products, id=id)
     context = get_common_context()
     context['product'] = product
+    context['title'] = 'Brusinha'
     return render(request, 'produto_single.html', context)
 
 def blogs(request):
-    products = Products.objects.all()
+    blogs = Blog.objects.all()
     context = get_common_context()
-    context['products'] = products
+    context['blogs'] = blogs
+    context['title'] = 'Blogs'
     return render(request, 'blogs.html', context)
 
-def blog_single(request, id):
-    product = get_object_or_404(Products, id=id)
+def blog_single(request, slug):
+    blogs = get_object_or_404(Blog, slug=slug)
     context = get_common_context()
-    context['product'] = product
+    context['blogs'] = blogs
+    context['title'] = 'Blog'
     return render(request, 'blog_single.html', context)

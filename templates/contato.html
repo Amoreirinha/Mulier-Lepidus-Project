@@ -1,24 +1,18 @@
+{% extends '_main.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mulier Lepidus</title>
-    <link rel="stylesheet" href="{% static 'bootstrap5/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <div class="cabecalho">
-        <h1>Mulier Lepidus</h1>
-        <h2>Para mulheres encantadoras</h2>
-    </div>
-    {% include '_header.html' %}
+{% block content %}
     <div class="conteudo">
         <h3>Quer entrar em contato?</h3>
+        <p>
+            Na Mulier Lepidus, a sua opinião e satisfação são extremamente importantes para nós. Estamos sempre aqui para ajudar e adoraríamos ouvir de você! Se você tiver alguma dúvida, sugestão ou simplesmente quiser dizer "oi", entre em contato conosco através dos seguintes canais:
+        </p>
+        <p>
+            Telefone: (XX) XXXX-XXXX<br>E-mail: contato@mulierlepidus.com.br<br>Endereço: Rua da Moda, 123, Centro, Cidade, Estado, CEP 00000-000
+        </p>
+        <p>
+            Com amor, <br>
+            Equipe Mulier Lepidus
+        </p>
+
     </div>
-    {% include '_footer.html' %}
-</body>
-<script type="text/javascript" src="{% static 'bootstrap5/js/bootstrap.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
-</html>
+{% endblock %}
