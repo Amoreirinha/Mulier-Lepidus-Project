@@ -1,0 +1,25 @@
+{% extends '_main.html' %}
+{% load static %}
+{% block content %}
+    <div class="conteudo">
+        <p>
+            {{olas}}
+        </p>
+        {% for ola in olas %}
+        <p>
+        {{ola}}
+        </p>
+        {%endfor%}
+        <p>
+            {{olas.0}}
+        </p>
+        <p>
+            {{olas.1}}
+        </p>
+        <p>
+            {{olas.2}}
+        </p>
+        <button onclick="f_teste()"> Função JS </button>
+        <img src="{% static 'img/pijama_fem_adult_urso-poh_1.png' %}" alt="pijama">
+    </div>
+{% endblock %}

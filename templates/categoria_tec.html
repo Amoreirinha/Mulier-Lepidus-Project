@@ -1,0 +1,19 @@
+{% extends '_main.html' %}
+{% load static %}
+{% block content %}
+    <div class="conteudo">
+        <h3>Gadgets</h3>
+        <div class="cards">
+            {% for t in tecs %}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ t.tec_image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ t.tec_name }}</h5>
+                      <p class="card-text">{{ t.tec_category }}</p>
+                      <a href="{% url 'tecnologia_single' t.slug %}" class="btn btn-primary">Ler mais</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

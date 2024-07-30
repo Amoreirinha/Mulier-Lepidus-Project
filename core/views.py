@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from core.models import Products, Blog
-
+from core.models import Products, Blog, Tecnology, CategoryTecnology
 def get_common_context():
     return {
         'olas': ['Olá!! ༼ つ ◕_◕ ༽つ', 'Olá?', '༼ つ ◕_◕ ༽つ'],
@@ -14,46 +13,67 @@ def get_common_context():
             {'name': 'Lojinha', 'link': 'lojinha'}
         ]
     }
-
 def index(request):
+    products = Products.objects.all()
+    blogs = Blog.objects.all()
     context = get_common_context()
+    context['products'] = products
+    context['blogs'] = blogs
     context['title'] = 'Mulier Lepidus'
     return render(request, 'index.html', context)
-
 def contato(request):
     context = get_common_context()
     context['title'] = 'Contato Mulier Lepidus'
     return render(request, 'contato.html', context)
-
 def sobre(request):
     context = get_common_context()
     context['title'] = 'Sobre Nós'
     return render(request, 'sobre.html', context)
-
 def lojinha(request):
     products = Products.objects.all()
     context = get_common_context()
     context['products'] = products
     context['title'] = 'Lojinha'
     return render(request, 'lojinha.html', context)
-
 def produto_single(request, id):
     product = get_object_or_404(Products, id=id)
     context = get_common_context()
     context['product'] = product
     context['title'] = 'Brusinha'
     return render(request, 'produto_single.html', context)
-
 def blogs(request):
     blogs = Blog.objects.all()
     context = get_common_context()
     context['blogs'] = blogs
     context['title'] = 'Blogs'
     return render(request, 'blogs.html', context)
-
 def blog_single(request, slug):
     blogs = get_object_or_404(Blog, slug=slug)
     context = get_common_context()
     context['blogs'] = blogs
     context['title'] = 'Blog'
     return render(request, 'blog_single.html', context)
+def tecs(request):
+    tecs = Tecnology.objects.all()
+    cattecs = CategoryTecnology.objects.all()
+    context = get_common_context()
+    context['tecs'] = tecs
+    context['cattecs'] = cattecs
+    context['title'] = 'Tecnologias'
+    return render(request, 'tecnologias.html', context)
+def tec_single(request, cattec_name, slug):
+    tecs = get_object_or_404(Tecnology, slug=slug)
+    cattecs = CategoryTecnology.objects.all()
+    context = get_common_context()
+    context['tecs'] = tecs
+    context['cattecs'] = cattecs
+    context['title'] = 'Tecnologia'
+    return render(request, 'tecnologia_single.html', context)
+def categoria_tec(request):
+    tecs = Tecnology.objects.all()
+    cattecs = CategoryTecnology.objects.all()
+    context = get_common_context()
+    context['tecs'] = tecs
+    context['cattecs'] = cattecs
+    context['title'] = 'Categorias'
+    return render(request, 'categoria_tec.html', context)

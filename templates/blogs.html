@@ -5,7 +5,6 @@
         <h3>Novas postagens</h3>
         <div class="cards">
             {% for b in blogs %}
-            <p>
                 <div class="card" style="width: 18rem;">
                     <img src="{{ b.blo_image.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -14,7 +13,6 @@
                       <a href="{% url 'blog_single' b.slug %}" class="btn btn-primary">Ler mais</a>
                     </div>
                 </div>
-            </p>
             {% endfor %}
         </div>
     </div>

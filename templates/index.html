@@ -2,24 +2,31 @@
 {% load static %}
 {% block content %}
     <div class="conteudo">
-        <p>
-            {{olas}}
-        </p>
-        {% for ola in olas %}
-        <p>
-        {{ola}}
-        </p>
-        {%endfor%}
-        <p>
-            {{olas.0}}
-        </p>
-        <p>
-            {{olas.1}}
-        </p>
-        <p>
-            {{olas.2}}
-        </p>
-        <button onclick="f_teste()"> Função JS </button>
-        <img src="{% static 'img/pijama_fem_adult_urso-poh_1.png' %}" alt="pijama">
+        <h3>Ler e Aprender</h3>
+        <div class="cards">
+            {% for b in blogs %}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ b.blo_image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ b.blo_title }}</h5>
+                      <p class="card-text">{{ b.blo_subtitle }}</p>
+                      <a href="{% url 'blog_single' b.slug %}" class="btn btn-primary">Ler mais</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <h3>Comprar e se embelezar</h3>
+        <div class="cards">
+            {% for p in products %}
+            <div class="card" style="width: 18rem">
+                <img src="{{p.photo.url}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title">{{ p }}</h5>
+                    <p class="card-text">R$ {{ p.price }}</p>
+                    <a href="{% url 'produto_single' p.id %}" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

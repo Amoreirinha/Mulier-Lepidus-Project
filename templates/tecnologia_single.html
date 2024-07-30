@@ -1,0 +1,18 @@
+{% extends '_main.html' %}
+{% load static %}
+{% block content %}
+    <div class="conteudo">
+        <h3>{{ tecs.tec_name }}</h3>
+        <div class="subititulo">
+            {{ tecs.tec_category }}
+        </div>
+        <p>
+            <div class="imagecenter">
+                <img src="{{ tecs.tec_image.url }}" alt="{{ tecs.tec_name }}">
+            </div>
+        </p>
+        <p>
+            {{ tecs.tec_description }}
+        </p>
+    </div>
+{% endblock %}
